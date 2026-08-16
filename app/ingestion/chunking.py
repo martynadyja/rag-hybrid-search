@@ -50,7 +50,7 @@ def structure_aware_chunking(doc: RawDocument) -> list[Chunk]:
         if not body:
             continue
         chunks.append(Chunk(
-            chunk_id=f"{doc.doc_id}-strict-{i}", doc_id=doc.doc_id,
+            chunk_id=f"{doc.doc_id}-struct-{i}", doc_id=doc.doc_id,
             source_path=doc.source_path, text=body,
             section_heading=heading, chunking_strategy="structure_aware"))
     return chunks
